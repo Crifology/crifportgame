@@ -50,7 +50,7 @@ k.scene("main", async () => {
     // Creating Boundaries
     for (const layer of layers) {
         if (layer.name === "boundaries") {
-            for (const boundaries of layer.objects) {
+            for (const boundary of layer.objects) {
                 map.add([
                     k.area({
                         shape: new k.Rect(k.vec2(0), boundary.width, boundary.height),
