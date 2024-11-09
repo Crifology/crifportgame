@@ -18,7 +18,7 @@ export function displayDialogue(text, onDisplayEnd) {
         }
 
         clearInterval(intervalRef);
-    }, 5);
+    }, 1);
 
     // Close Button for Textbox
     const closeBtn = document.getElementById("close");

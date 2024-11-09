@@ -71,7 +71,7 @@ k.scene("main", async () => {
         continue;
       }
   
-      if (layer.name === "spawnpoints") {
+      if (layer.name === "spawn") {
         for (const entity of layer.objects) {
           if (entity.name === "player") {
             player.pos = k.vec2(
@@ -105,8 +105,8 @@ k.scene("main", async () => {
 
         const mouseAngle = player.pos.angle(worldMousePos)
 
-        const lowerBound = 224;
-        const upperBound = 229;
+        const lowerBound = 50;
+        const upperBound = 125;
 
         if (
             mouseAngle > lowerBound &&
