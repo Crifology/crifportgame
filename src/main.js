@@ -23,80 +23,66 @@ k.setBackground(k.Color.fromHex("#311047"));
 
 // Creating the Game Frontend with Player
 k.scene("main", async () => {
-    const mapData = await (await fetch("./map.json")).json()
-    // ... load map data and load as json function
-
+    const mapData = await (await fetch("./map.json")).json();
     const layers = mapData.layers;
-    // looks cleaner than the map.json layers
-
+  
     const map = k.add([k.sprite("map"), k.pos(0), k.scale(scaleFactor)]);
-
+  
     const player = k.make([
-        k.sprite("spritesheet", {anim: "idle-down"}), 
-        k.area({
-            shape: new k.Rect(k.vec2(0, 3), 10, 10),
-        }),
-        k.body(),
-        k.anchor("center"),
-        k.pos(),
-        k.scale(scaleFactor),
-        {
-            speed: 250,
-            direction: "down",
-            isInDialogue: false,
-        },
-        "player", 
+      k.sprite("spritesheet", { anim: "idle-down" }),
+      k.area({
+        shape: new k.Rect(k.vec2(0, 3), 10, 10),
+      }),
+      k.body(),
+      k.anchor("center"),
+      k.pos(),
+      k.scale(scaleFactor),
+      {
+        speed: 250,
+        direction: "down",
+        isInDialogue: false,
+      },
+      "player",
     ]);
-
-    // Creating Boundaries
+  
     for (const layer of layers) {
-        if (layer.name === "boundaries") {
-          const objects = Array.isArray(layer.objects) ? layer.objects : [];
-      
-          for (const boundary of objects) {
-            map.add([
-              k.area({
-                shape: new k.Rect(k.vec2(0), boundary.width, boundary.height),
-              }),
-              k.body({ isStatic: true }),
-              k.pos(boundary.x, boundary.y),
-              boundary.name,
-            ]);
-      
-            if (boundary.name) {
-              player.onCollide(boundary.name, () => {
-                player.isInDialogue = true;
-                displayDialogue(
-                  dialogueData[boundary.name],
-                  () => (player.isInDialogue = false)
-                );
-              });
-            }
+      if (layer.name === "boundaries") {
+        for (const boundary of layer.objects) {
+          map.add([
+            k.area({
+              shape: new k.Rect(k.vec2(0), boundary.width, boundary.height),
+            }),
+            k.body({ isStatic: true }),
+            k.pos(boundary.x, boundary.y),
+            boundary.name,
+          ]);
+  
+          if (boundary.name) {
+            player.onCollide(boundary.name, () => {
+              player.isInDialogue = true;
+              displayDialogue(
+                dialogueData[boundary.name],
+                () => (player.isInDialogue = false)
+              );
+            });
           }
-      
-          continue;
         }
-      
-      
-
-        if (layer.name === "spawn") {
-            // Check if layers.objects is defined and iterable
-            if (Array.isArray(layers.objects)) {
-                for (const entity of layers.objects) {
-                    if (entity.name === "player") {
-                        player.pos = k.vec2(
-                            (map.pos.x + entity.x) * scaleFactor,
-                            (map.pos.y + entity.y) * scaleFactor
-                        );
-                        k.add(player);
-                        continue;
-                    }
-                }
-            } else {
-                console.error("layers.objects is not an array or is undefined");
-            }
+  
+        continue;
+      }
+  
+      if (layer.name === "spawnpoints") {
+        for (const entity of layer.objects) {
+          if (entity.name === "player") {
+            player.pos = k.vec2(
+              (map.pos.x + entity.x) * scaleFactor,
+              (map.pos.y + entity.y) * scaleFactor
+            );
+            k.add(player);
+            continue;
+          }
         }
-        
+      }
     } 
 
     // Scaling the Camera
