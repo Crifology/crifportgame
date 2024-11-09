@@ -80,7 +80,10 @@ k.scene("main", async () => {
       
 
         if (layer.name === "spawn") {
+            const objects = Array.isArray(layer.objects) ? layer.objects : [];
+            
             for (const entity of layers.objects) {
+                
                if (entity.name === "player") {
                 player.pos = k.vec2(
                     (map.pos.x + entity.x) * scaleFactor,
