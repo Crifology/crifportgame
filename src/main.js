@@ -103,7 +103,7 @@ k.scene("main", async () => {
         const worldMousePos = k.toWorld(k.mousePos());
         player.moveTo(worldMousePos, player.speed);
 
-        const mouseAngle = player.pos.angle(worldMousePos)
+        const mouseAngle = player.pos.angle(worldMousePos);
 
         const lowerBound = 50;
         const upperBound = 125;
@@ -208,7 +208,6 @@ k.scene("main", async () => {
           player.move(0, player.speed);
         }
       });
-    
 });
 
 k.go("main");
