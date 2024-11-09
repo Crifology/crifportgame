@@ -80,21 +80,23 @@ k.scene("main", async () => {
       
 
         if (layer.name === "spawn") {
-            const objects = Array.isArray(layer.objects) ? layer.objects : [];
-            
-            for (const entity of layers.objects) {
-                
-               if (entity.name === "player") {
-                player.pos = k.vec2(
-                    (map.pos.x + entity.x) * scaleFactor,
-                    (map.pos.y + entity.y) * scaleFactor
-                );
-                k.add(player);
-
-                continue;
-               }
+            // Check if layers.objects is defined and iterable
+            if (Array.isArray(layers.objects)) {
+                for (const entity of layers.objects) {
+                    if (entity.name === "player") {
+                        player.pos = k.vec2(
+                            (map.pos.x + entity.x) * scaleFactor,
+                            (map.pos.y + entity.y) * scaleFactor
+                        );
+                        k.add(player);
+                        continue;
+                    }
+                }
+            } else {
+                console.error("layers.objects is not an array or is undefined");
             }
         }
+        
     } 
 
     // Scaling the Camera
