@@ -38,6 +38,7 @@ k.scene("main", async () => {
         }),
         k.body(),
         k.anchor("center"),
+        k.pos(),
         k.scale(scaleFactor),
         {
             speed: 250,
@@ -145,19 +146,72 @@ k.scene("main", async () => {
         }
     });
 
-    // Stop Waking Animation When Mouse Clicked Stop
-    k.onMouseRelease(() => {
+    function stopAnims() {
         if (player.direction === "down") {
-            player.play("idle-down");
-            return;
+          player.play("idle-down");
+          return;
         }
         if (player.direction === "up") {
-            player.play("idle-up");
-            return;
+          player.play("idle-up");
+          return;
         }
-
+    
         player.play("idle-side");
-    })
+      }
+    
+      k.onMouseRelease(stopAnims);
+    
+      k.onKeyRelease(() => {
+        stopAnims();
+      });
+      k.onKeyDown((key) => {
+        const keyMap = [
+          k.isKeyDown("right"),
+          k.isKeyDown("left"),
+          k.isKeyDown("up"),
+          k.isKeyDown("down"),
+        ];
+    
+        let nbOfKeyPressed = 0;
+        for (const key of keyMap) {
+          if (key) {
+            nbOfKeyPressed++;
+          }
+        }
+    
+        if (nbOfKeyPressed > 1) return;
+    
+        if (player.isInDialogue) return;
+        if (keyMap[0]) {
+          player.flipX = false;
+          if (player.curAnim() !== "walk-side") player.play("walk-side");
+          player.direction = "right";
+          player.move(player.speed, 0);
+          return;
+        }
+    
+        if (keyMap[1]) {
+          player.flipX = true;
+          if (player.curAnim() !== "walk-side") player.play("walk-side");
+          player.direction = "left";
+          player.move(-player.speed, 0);
+          return;
+        }
+    
+        if (keyMap[2]) {
+          if (player.curAnim() !== "walk-up") player.play("walk-up");
+          player.direction = "up";
+          player.move(0, -player.speed);
+          return;
+        }
+    
+        if (keyMap[3]) {
+          if (player.curAnim() !== "walk-down") player.play("walk-down");
+          player.direction = "down";
+          player.move(0, player.speed);
+        }
+      });
+    
 });
 
 k.go("main");
