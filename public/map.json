@@ -72,7 +72,7 @@
                 {
                  "height":13.3333,
                  "id":5,
-                 "name":"wall",
+                 "name":"",
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -83,7 +83,7 @@
                 {
                  "height":235,
                  "id":6,
-                 "name":"wall",
+                 "name":"",
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -94,7 +94,7 @@
                 {
                  "height":13.3333,
                  "id":7,
-                 "name":"wall",
+                 "name":"",
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -105,7 +105,7 @@
                 {
                  "height":236,
                  "id":8,
-                 "name":"wall",
+                 "name":"",
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -116,7 +116,7 @@
                 {
                  "height":40,
                  "id":9,
-                 "name":"wall",
+                 "name":"",
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -127,7 +127,7 @@
                 {
                  "height":38.3333,
                  "id":10,
-                 "name":"wall",
+                 "name":"",
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -138,7 +138,7 @@
                 {
                  "height":14,
                  "id":11,
-                 "name":"wall",
+                 "name":"",
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -149,7 +149,7 @@
                 {
                  "height":45.3333,
                  "id":12,
-                 "name":"wall",
+                 "name":"",
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -160,7 +160,7 @@
                 {
                  "height":79,
                  "id":13,
-                 "name":"wall",
+                 "name":"",
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -171,7 +171,7 @@
                 {
                  "height":15,
                  "id":14,
-                 "name":"wall",
+                 "name":"",
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -182,7 +182,7 @@
                 {
                  "height":15,
                  "id":15,
-                 "name":"wall",
+                 "name":"",
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -193,7 +193,7 @@
                 {
                  "height":45.3333,
                  "id":16,
-                 "name":"wall",
+                 "name":"",
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -204,7 +204,7 @@
                 {
                  "height":16.6667,
                  "id":17,
-                 "name":"wall",
+                 "name":"",
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -392,7 +392,7 @@
                 {
                  "height":14.533,
                  "id":34,
-                 "name":"wall",
+                 "name":"",
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -403,7 +403,7 @@
                 {
                  "height":14.533,
                  "id":35,
-                 "name":"wall",
+                 "name":"",
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -414,7 +414,7 @@
                 {
                  "height":15.1649,
                  "id":36,
-                 "name":"wall",
+                 "name":"",
                  "rotation":0,
                  "type":"",
                  "visible":true,

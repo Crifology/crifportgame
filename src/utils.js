@@ -32,6 +32,12 @@ export function displayDialogue(text, onDisplayEnd) {
     }
 
     closeBtn.addEventListener("click", onCloseBtnClick);
+
+    addEventListener("keypress", (key) => {
+        if (key.code === "Enter") {
+          closeBtn.click();
+        }
+      });
 }
 
 export function setCamScale(k) {
