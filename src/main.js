@@ -71,8 +71,8 @@ k.scene("main", async () => {
               });
             }
           }
-
-            continue;
+    
+          continue;
         }
 
         if (layer.name === "spawn") {
@@ -98,8 +98,8 @@ k.scene("main", async () => {
     })
 
     k.onUpdate(() => {
-        k.camPos(player.pos.x, player.pos.y + 100);
-    });
+        k.camPos(player.worldPos().x, player.worldPos().y - 100);
+      });
 
     // Player Movement
     k.onMouseDown((mouseBtn) => {
