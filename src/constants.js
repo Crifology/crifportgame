@@ -3,6 +3,7 @@
 export const scaleFactor = 4;
 
 export const dialogueData = {
+    exit: `Ready to leave my virtual house? You can go back to my main page by clicking <a href="https://www.crifology.com/" target="_blank">HERE</a>!  Hope you enjoyed this creation!`,
     "kit-food": `... Pizzas... hot pockets... some energy drinks... yup, looks good.  Will definitely be having some of these later...`,
     "kit-pc": `I'm a geek, so ofcourse there would be a PC in kitchen.. some of my software skillset include Javascript (as this is built with Kaboom.js), but also consider myself well versed in computing hardware, software configurations, with knowledge of Azure AD, Jira/Atlassian, and Sharepoint Online.  I use online sources such as YouTube and Udemy as a foundation for my continued learning.`,
     degree: `Framed Degree from Merrimack College, dated 2010.  BA in Economics.  Great school.  Makes me tear up thinking that was so long ago...`,
