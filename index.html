@@ -29,8 +29,8 @@
         right: 10%;
         bottom: 2vh;
         min-height: 10vh;
-        background: rgba(168, 165, 165, 0.708);
-        border-radius: 3px;
+        background: rgb(255, 255, 255);
+        border-radius: 4px;
         outline-style: solid;
         padding: 1rem;
         display: flex;
@@ -62,19 +62,39 @@
 
       .note {
         position: absolute;
+        background-color: rgba(240, 255, 255, 0.548);
+        font-size: 4rem;
         left: 5%;
         top: 1vh;
         display: flex;
         flex-direction: column;
-        color: rgb(255, 102, 0);
+        color: rgb(20, 3, 255);
         user-select: none;
+      }
+
+      .note-container {
+        position: absolute;
+        left: 10%;
+        right: 10%;
+        bottom: 2vh;
+        min-height: 10vh;
+        background: rgb(255, 255, 255);
+        border-radius: 5px;
+        outline-style: solid;
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        align-items: flex-start;
+        word-spacing: 0.2rem;
+        filter: drop-shadow(0 0 0.75rem rgb(76, 76, 76));
       }
 
     </style>
     <div id="app">
       <div>
         <p class="note">Tap and Hold or Hold Mouse-Click to Move Around!!</p>
-
         <div id="textbox-container" style="display: none">
           <div id="textbox">
             <p id="dialogue" class="ui-text"></p>
