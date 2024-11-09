@@ -442,8 +442,8 @@
                  "type":"",
                  "visible":true,
                  "width":0,
-                 "x":224.333,
-                 "y":264.333
+                 "x":224.117,
+                 "y":246.627
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -451,28 +451,19 @@
          "x":0,
          "y":0
         }],
-        "nextlayerid":6,
-        "nextobjectid":36,
-        "orientation":"orthogonal",
-        "renderorder":"right-down",
-        "tiledversion":"1.10.2",
-        "tileheight":16,
-        "tilesets":[
-               {
-                "columns":39,
-                "firstgid":1,
-                "image":"spritesheet.png",
-                "imageheight":496,
-                "imagewidth":624,
-                "margin":0,
-                "name":"spritesheet",
-                "spacing":0,
-                "tilecount":1209,
-                "tileheight":16,
-                "tilewidth":16
-               }],
-        "tilewidth":16,
-        "type":"map",
-        "version":"1.10",
-        "width":27
-       }
+ "nextlayerid":6,
+ "nextobjectid":37,
+ "orientation":"orthogonal",
+ "renderorder":"right-down",
+ "tiledversion":"1.11.0",
+ "tileheight":16,
+ "tilesets":[
+        {
+         "firstgid":1,
+         "source":"spritesheet.tsx"
+        }],
+ "tilewidth":16,
+ "type":"map",
+ "version":"1.10",
+ "width":27
+}
